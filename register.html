@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Sam'IT</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="cart.html">Cart</a>
+        <a href="orders.html">Orders</a>
+        <div class="user-info">
+            <span id="username-display">Guest</span>
+            <a href="login.html" id="login-link" style="display: inline;">Login</a>
+            <a href="register.html" id="register-link" style="display: inline;">Register</a>
+            <a href="logout.html" id="logout-link" style="display: none;">Logout</a>
+        </div>
+    </nav>
+
+    <div class="auth-container">
+        <div class="auth-forms">
+            <div class="register-form">
+                <h2>Register</h2>
+                <input type="text" id="register-username" placeholder="Username" required>
+                <input type="email" id="register-email" placeholder="Email" required> 
+                <input type="password" id="register-password" placeholder="Password" required>
+                <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+                <button onclick="register()">Register</button>
+                <p id="register-error" class="error-message"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025  by Sam.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
