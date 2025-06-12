@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Selection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-title">
+            <a href="index.html">
+                <img src="2.png" alt="Sam's IT Institute Logo" class="navbar-logo">
+            </a>
+        </div>
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="cart.html">Cart</a>
+        <a href="orders.html">Orders</a>
+        <div class="user-info">
+            <span id="username-display">Guest</span>
+            <a href="login.html" id="login-link" style="display: inline;">Login</a>
+            <a href="register.html" id="register-link" style="display: inline;">Register</a>
+            <a href="logout.html" id="logout-link" style="display: none;">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Select Your Course</h1>
+        <div class="course-list" id="course-list"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Created by Sam.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const storedUser = JSON.parse(localStorage.getItem('currentUser') || sessionStorage.getItem('currentUser') || 'null');
+            if (storedUser) {
+                document.getElementById('username-display').textContent = storedUser.username;
+                document.getElementById('login-link').style.display = 'none';
+                document.getElementById('register-link').style.display = 'none';
+                document.getElementById('logout-link').style.display = 'inline';
+            } else {
+                document.getElementById('username-display').textContent = 'Guest';
+                document.getElementById('login-link').style.display = 'inline';
+                document.getElementById('register-link').style.display = 'inline';
+                document.getElementById('logout-link').style.display = 'none';
+            }
+        });
+
+        async function loadCourses() {
+            try {
+                const response = await fetch('courses.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const courses = await response.json();
+                displayCourses(courses);
+            } catch (error) {
+                console.error('Error loading courses:', error);
+                if (error instanceof SyntaxError) {
+                    console.error('Invalid JSON format:', error.message);
+                }
+            }
+        }
+
+        function displayCourses(courses) {
+            const courseList = document.getElementById('course-list');
+            courseList.innerHTML = '';
+
+            courses.forEach(course => {
+                const courseCard = document.createElement('div');
+                courseCard.className = 'course-card';
+                courseCard.innerHTML = `
+                    <img src="${course.image}" alt="${course.name}">
+                    <h3>${course.name}</h3>
+                    <h3>Unit number:${course.unitNumber}</h3>
+                    <p>${course.description}</p>
+                    <a href="${course.link}" class="course-link">View Details</a>
+                `;
+                courseList.appendChild(courseCard);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCourses();
+        });
+    </script>
+</body>
+</html>
