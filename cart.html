@@ -7,28 +7,33 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navigation bar at the top of the page -->
     <nav class="navbar">
         <div class="navbar-title">
             <a href="index.html">
                 <img src="2.png" alt="Sam's IT Institute Logo" class="navbar-logo">
             </a>
         </div>
+        <!-- Links to different sections of the website -->
         <a href="index.html">Home</a>
         <a href="courses.html">Courses</a>
         <a href="cart.html">Cart</a>
         <a href="orders.html">Orders</a>
+        <!-- User information and logout link -->
         <div class="user-info">
             <span id="username-display">Guest</span>
             <a href="logout.html" id="logout-link" style="display: none;">Logout</a>
         </div>
     </nav>
 
+     <!-- Main container for the shopping cart page -->
     <div class="container">
         <h1>Your Shopping Cart</h1>
         <div id="login-prompt" class="login-prompt">
             <p>Please login to view your cart.</p>
             <a href="index.html">Go to Login</a>
         </div>
+        <!-- Section to display the cart content -->
         <div id="cart-content" style="display: none;">
             <div class="products">
                 <h2>Available Products</h2>
@@ -44,6 +49,7 @@
     <aside class="cart-sidebar" id="cart-sidebar">
         <div class="cart-summary">
             <h3>Your Cart</h3>
+            <!-- Button to close the cart sidebar -->
             <button id="close-cart-btn" onclick="toggleCartSidebar()">Close</button>
             <div id="cart-summary-items"></div>
             <div class="cart-summary-footer">
@@ -52,10 +58,12 @@
         </div>
     </aside>
 
+    <!-- Footer section -->
     <footer>
         <p>&copy; 2025  Created by Sam.</p>
     </footer>
 
+    <!-- Script link for JavaScript functionality -->
     <script src="app.js"></script>
 </body>
 </html>
