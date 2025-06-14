@@ -7,16 +7,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navigation bar with logo and links to other pages -->
     <nav class="navbar">
+        <!-- Logo and link to the home page -->
         <div class="navbar-title">
             <a href="index.html">
                 <img src="2.png" alt="Sam's IT Institute Logo" class="navbar-logo">
             </a>
         </div>
+        <!-- Links to different sections of the website -->
         <a href="index.html">Home</a>
         <a href="courses.html">Courses</a>
         <a href="cart.html">Cart</a>
         <a href="orders.html">Orders</a>
+        <!-- User information and login/logout/register links -->
         <div class="user-info">
             <span id="username-display">Guest</span>
             <a href="login.html" id="login-link" style="display: inline;">Login</a>
@@ -25,26 +29,36 @@
         </div>
     </nav>
 
+    <!-- Container for the login form -->
     <div class="auth-container">
+        <!-- Authentication forms section -->
         <div class="auth-forms">
+            <!-- Login form -->
             <div class="login-form">
                 <h2>Login</h2>
+                <!-- Input field for username -->
                 <input type="text" id="login-username" placeholder="Username" required>
+                <!-- Input field for password -->
                 <input type="password" id="login-password" placeholder="Password" required>
+                <!-- Remember me checkbox -->
                 <div class="remember-me">
                     <input type="checkbox" id="remember-me" name="remember-me">
                     <label for="remember-me">Remember me</label>
                 </div>
+                <!-- Login button -->
                 <button onclick="login()">Login</button>
+                <!-- Error message display for login errors -->
                 <p id="login-error" class="error-message"></p>
             </div>
         </div>
     </div>
 
+    <!-- Footer section with copyright information -->
     <footer>
         <p>&copy; 2025  by Sam.</p>
     </footer>
 
+    <!-- JavaScript file for handling login functionality -->
     <script src="app.js"></script>
 </body>
 </html>
