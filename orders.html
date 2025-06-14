@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navigation bar section -->
     <nav class="navbar">
         <div class="navbar-title">
             <a href="index.html">
@@ -23,21 +24,26 @@
         </div>
     </nav>
 
+    <!-- Main container for order management -->
     <div class="container">
         <h1>Order Management</h1>
+        <!-- Login prompt for users who are not logged in -->
         <div id="login-prompt" class="login-prompt" style="display:none;">
             <p>Please login to view your orders.</p>
             <a href="index.html">Go to Login</a>
         </div>
+        <!-- Orders content section -->
         <div id="orders-content" style="display: none;">
             <div id="orders-list" class="orders-list"></div>
         </div>
     </div>
 
+    <!-- Footer section -->
     <footer>
         <p>&copy; 2025 Created by Sam.</p>
     </footer>
 
+    <!-- JavaScript for order management functionality -->
     <script src="app.js"></script>
 </body>
 </html>
