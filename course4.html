@@ -7,7 +7,13 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navigation bar section -->
     <nav class="navbar">
+        <div class="navbar-title">
+            <a href="index.html">
+                <img src="2.png" alt="Sam's IT Institute Logo" class="navbar-logo">
+            </a>
+        </div>
         <a href="index.html">Home</a>
         <a href="courses.html">Courses</a>
         <a href="cart.html">Cart</a>
@@ -20,34 +26,44 @@
         </div>
     </nav>
 
+    <!-- Main content container -->
     <div class="container">
         <h1>Advanced Diploma of Information Technology</h1>
         <h2>Unit number:ICT60220</h2>
         <img src="https://img2.baidu.com/it/u=835369351,3196875305&fm=253&fmt=auto&app=120&f=JPEG?w=1333&h=800" width="300" height="200" alt="Course 1" class="course-image">
         <div class="course-description">
             <p>This course is suitable for experienced IT professionals, providing advanced knowledge and skills covering advanced topics such as project management, system design, and network security.</p>
+        <!-- Core units section (currently empty) -->
         <h2>Core Unit:</h2>
         <p></p>
+        <!-- Elective units section -->
         <h2>Elective Unit:</h2>
         <p>Including advanced project management, system design, network security strategy, etc</p>
             <button id="register-btn" class="register-btn">Register</button>
         </div>
     </div>
 
+    <!-- Footer section -->
     <footer>
         <p>&copy; 2025 Created by Sam.</p>
     </footer>
     
+    <!-- JavaScript for user display and registration logic -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Update user display
+            // Update user display based on login status
             updateUserDisplay();
 
+            // Define the course ID for registration tracking
             const courseId = 'course4'; 
+            // Retrieve registered courses from local storage
             const registeredCourses = JSON.parse(localStorage.getItem('registeredCourses')) || {};
+            // Check if the user is already registered for this course
             const isRegistered = registeredCourses[courseId] === true;
+            // Get the register button element
             const registerBtn = document.getElementById('register-btn');
 
+            // Function to update the button text based on registration status
             function updateButtonState() {
                 const user = JSON.parse(sessionStorage.getItem('currentUser')) || JSON.parse(localStorage.getItem('currentUser'));
                 if (!user) {
@@ -60,14 +76,17 @@
                 }
             }
 
+            // Initial update of button state
             updateButtonState();
 
+            // Event listener for the register button
             registerBtn.addEventListener('click', () => {
                 const user = JSON.parse(sessionStorage.getItem('currentUser')) || JSON.parse(localStorage.getItem('currentUser'));
                 if (!user) {
                     // Redirect to login page if user is not logged in
                     window.location.href = 'login.html';
                 } else if (isRegistered) {
+                    // Confirm unregistration before proceeding
                     const confirmUnregister = confirm('Are you sure you want to unregister from this course?');
                     if (confirmUnregister) {
                         updateRegistrationStatus(courseId, false);
