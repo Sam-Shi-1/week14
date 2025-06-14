@@ -7,17 +7,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navigation bar at the top of the page -->
     <nav class="navbar">
         <div class="navbar-title">
             <a href="index.html">
+                <!-- Logo image link -->
                 <img src="2.png" alt="Sam's IT Institute Logo" class="navbar-logo">
             </a>
         </div>
-
+        <!-- Links to different sections of the website -->
         <a href="index.html">Home</a>
         <a href="courses.html">Courses</a>
         <a href="cart.html">Cart</a>
         <a href="orders.html">Orders</a>
+        <!-- User information and login/register/logout links -->
         <div class="user-info">
             <span id="username-display">Guest</span>
             <a href="login.html" id="login-link" style="display: inline;">Login</a>
@@ -29,30 +32,35 @@
         </div>
     </nav>
 
+    <!-- Banner slider for featured courses -->
     <div class="banner-slider">
         <div class="banner-slide" style="display: block;">
+            <!-- First banner image -->
             <img src="https://img0.baidu.com/it/u=3041581370,2689911701&fm=253&fmt=auto&app=120&f=JPEG?w=2114&h=800" alt="Course 1" class="banner-image">
         </div>
         <div class="banner-slide" style="display: none;">
+            <!-- Second banner image -->
             <img src="https://img0.baidu.com/it/u=3041581370,2689911701&fm=253&fmt=auto&app=120&f=JPEG?w=2114&h=800" alt="Course 2" class="banner-image">
         </div>
         <div class="banner-slide" style="display: none;">
+            <!-- Third banner image -->
             <img src="https://img1.baidu.com/it/u=1648845286,365515565&fm=253&fmt=auto&app=138&f=JPEG?w=900&h=500" alt="Course 3" class="banner-image">
         </div>
-
+        <!-- Slide indicators for banner navigation -->
         <div class="slide-indicators">
             <div class="slide-indicator active" data-index="0"></div>
             <div class="slide-indicator" data-index="1"></div>
             <div class="slide-indicator" data-index="2"></div>
         </div>
-    
-</div>
+    </div>
 
-
+    <!-- Main container for the home page content -->
     <div class="container">
+        <!-- Featured courses section -->
         <section class="featured-courses">
             <h2 class="section-title">Featured Courses</h2>
             <div class="course-list">
+                <!-- First featured course -->
                 <div class="course-card">
                     <img src="https://img2.baidu.com/it/u=835369351,3196875305&fm=253&fmt=auto&app=120&f=JPEG?w=1333&h=800" alt="Course 1">
                     <h3>Diploma of Information Technology Systems Administration</h3>
@@ -60,6 +68,7 @@
                     <p>Developing students' ability to manage network computer systems.</p>
                     <a href="course1.html" class="course-link">View Details</a>
                 </div>
+                <!-- Second featured course -->
                 <div class="course-card">
                     <img src="https://img2.baidu.com/it/u=12088615,3015363422&fm=253&fmt=auto&app=120&f=JPEG?w=536&h=500" alt="Course 2">
                     <h3>Certificate IV in Information Technology Networking</h3>
@@ -67,6 +76,7 @@
                     <p>Teach the basic knowledge of network infrastructure construction and management</p>
                     <a href="course2.html" class="course-link">View Details</a>
                 </div>
+                <!-- Third featured course -->
                 <div class="course-card">
                     <img src="https://img1.baidu.com/it/u=972590201,2719528279&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" alt="Course 3">
                     <h3>Diploma of Information Technology</h3>
@@ -77,24 +87,29 @@
             </div>
         </section>
 
+        <!-- Why Choose Us section -->
         <section class="features-section">
             <h2 class="section-title">Why Choose Us</h2>
             <div class="features-grid">
+                <!-- Expert Instructors -->
                 <div class="feature-card">
                     <div class="feature-icon">📚</div>
                     <h3>Expert Instructors</h3>
                     <p>Learn from industry professionals with years of experience in IT education.</p>
                 </div>
+                <!-- Flexible Learning -->
                 <div class="feature-card">
                     <div class="feature-icon">🔄</div>
                     <h3>Flexible Learning</h3>
                     <p>Study at your own pace with our online and in-person course options.</p>
                 </div>
+                <!-- Career Support -->
                 <div class="feature-card">
                     <div class="feature-icon">💼</div>
                     <h3>Career Support</h3>
                     <p>Get job placement assistance and career counseling after course completion.</p>
                 </div>
+                <!-- Modern Curriculum -->
                 <div class="feature-card">
                     <div class="feature-icon">📱</div>
                     <h3>Modern Curriculum</h3>
@@ -103,20 +118,25 @@
             </div>
         </section>
 
+        <!-- Stats section -->
         <section class="stats-section">
             <div class="stats-container">
+                <!-- Stat item for students trained -->
                 <div class="stat-item">
                     <div class="stat-number">5000+</div>
                     <div class="stat-label">Students Trained</div>
                 </div>
+                <!-- Stat item for satisfaction rate -->
                 <div class="stat-item">
                     <div class="stat-number">98%</div>
                     <div class="stat-label">Satisfaction Rate</div>
                 </div>
+                <!-- Stat item for job placement -->
                 <div class="stat-item">
                     <div class="stat-number">85%</div>
                     <div class="stat-label">Job Placement</div>
                 </div>
+                <!-- Stat item for industry partners -->
                 <div class="stat-item">
                     <div class="stat-number">50+</div>
                     <div class="stat-label">Industry Partners</div>
@@ -124,37 +144,45 @@
             </div>
         </section>
 
+        <!-- Testimonials section -->
         <section class="testimonials">
             <h2 class="section-title">Student Testimonials</h2>
+            <!-- First testimonial -->
             <div class="testimonial">
                 <p>"The Diploma of IT course completely transformed my career. The practical skills I learned allowed me to secure a network administrator position immediately after graduation."</p>
                 <div class="testimonial-author">- Michael Chen, Network Administrator</div>
             </div>
+            <!-- Second testimonial -->
             <div class="testimonial">
                 <p>"As a working professional, the flexible learning options were perfect for me. The instructors were always available to answer questions and provide guidance."</p>
                 <div class="testimonial-author">- Sarah Johnson, IT Support Specialist</div>
             </div>
+            <!-- Third testimonial -->
             <div class="testimonial">
                 <p>"The career support services helped me transition from hospitality to IT. The job placement assistance was invaluable in starting my new career path."</p>
                 <div class="testimonial-author">- David Park, Systems Analyst</div>
             </div>
         </section>
 
+        <!-- About Our School section -->
         <section class="about-section">
             <h2 class="section-title">About Our School</h2>
             <div class="about-content">
+                <!-- About text -->
                 <div class="about-text">
                     <p>Founded in 2010, Sam's IT Institute has been at the forefront of technology education, providing industry-relevant training to thousands of students worldwide.</p>
                     <p>Our mission is to bridge the gap between academic knowledge and real-world IT skills, preparing students for successful careers in the rapidly evolving tech industry.</p>
                     <p>With state-of-the-art facilities and a team of dedicated instructors, we offer a learning environment that fosters innovation, critical thinking, and practical skills development.</p>
                     <a href="courses.html" class="course-link" style="display: inline-block; margin-top: 15px;">Explore Our Courses</a>
                 </div>
+                <!-- About image -->
                 <div class="about-image">
                     <img src="https://img0.baidu.com/it/u=1607391501,374978096&fm=253&fmt=auto&app=120&f=JPEG?w=1140&h=758" alt="Our Campus">
                 </div>
             </div>
         </section>
 
+        <!-- Newsletter section -->
         <section class="newsletter">
             <h2 class="section-title">Stay Updated</h2>
             <p>Subscribe to our newsletter for course updates, IT industry insights, and exclusive offers.</p>
@@ -165,12 +193,15 @@
         </section>
     </div>
 
-     <div class="footer-section">
+    <!-- Footer section -->
+    <div class="footer-section">
         <div class="container">
+            <!-- About Us column -->
             <div class="footer-column">
                 <h3>About Us</h3>
                 <p>Founded in 2010, Sam's IT Institute has been at the forefront of technology education, providing industry-relevant training to thousands of students worldwide.</p>
             </div>
+            <!-- Contact Us column -->
             <div class="footer-column">
                 <h3>Contact Us</h3>
                 <p>Email: contact@samit.com</p>
@@ -180,12 +211,15 @@
         </div>
     </div>
 
+    <!-- Copyright footer -->
     <footer>
         <p>&copy; 2025 by Sam.</p>
     </footer>
 
+    <!-- JavaScript file for additional functionality -->
     <script src="app.js"></script>
     <script>
+        // Event listener for newsletter subscription
         document.querySelector('.newsletter-form button').addEventListener('click', function() {
             const email = document.querySelector('.newsletter-form input').value;
             if (email && validateEmail(email)) {
@@ -196,6 +230,7 @@
             }
         });
         
+        // Function to validate email format
         function validateEmail(email) {
             const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return re.test(email);
