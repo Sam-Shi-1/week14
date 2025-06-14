@@ -7,11 +7,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navigation bar with logo and links to other pages -->
     <nav class="navbar">
+        <!-- Logo and link to the home page -->
+        <div class="navbar-title">
+            <a href="index.html">
+                <img src="2.png" alt="Sam's IT Institute Logo" class="navbar-logo">
+            </a>
+        </div>
+        <!-- Links to different sections of the website -->
         <a href="index.html">Home</a>
         <a href="courses.html">Courses</a>
         <a href="cart.html">Cart</a>
         <a href="orders.html">Orders</a>
+        <!-- User information and login/logout/register links -->
         <div class="user-info">
             <span id="username-display">Guest</span>
             <a href="login.html" id="login-link" style="display: inline;">Login</a>
@@ -20,38 +29,52 @@
         </div>
     </nav>
 
+    <!-- Main container for displaying course details -->
     <div class="container">
+        <!-- Course title and unit number -->
         <h1>Certificate IV in Information Technology</h1>
         <h2>Unit number:ICT40118</h2>
+        <!-- Course image -->
         <img src="https://img2.baidu.com/it/u=835369351,3196875305&fm=253&fmt=auto&app=120&f=JPEG?w=1333&h=800" width="300" height="200" alt="Course 1" class="course-image">
+        <!-- Course description and units -->
         <div class="course-description">
             <p>This course provides students with core skills and knowledge in information technology, suitable for beginners or learners who wish to enhance their foundational skills.</p>
-        <h2>Core Unit:</h2>
-        <p>ICTICT443: Collaborative Work in the ICT Industry</p>
-        <p>ICTICT444: Applied Advanced Critical Thinking</p>
-        <p>ICTICT445: Compliance with Intellectual Property and Privacy Policy</p>
-        <p>ICTPRG412: Application Programming Techniques</p>
-        <p>ICTDBS411: Application Database Technology</p>
-        <h2>Elective Unit:</h2>
-        <p>Students can choose units related to network security, network design, software development, etc.</p>
+            <!-- Core units of the course -->
+            <h2>Core Unit:</h2>
+            <p>ICTICT443: Collaborative Work in the ICT Industry</p>
+            <p>ICTICT444: Applied Advanced Critical Thinking</p>
+            <p>ICTICT445: Compliance with Intellectual Property and Privacy Policy</p>
+            <p>ICTPRG412: Application Programming Techniques</p>
+            <p>ICTDBS411: Application Database Technology</p>
+            <!-- Elective units description -->
+            <h2>Elective Unit:</h2>
+            <p>Students can choose units related to network security, network design, software development, etc.</p>
+            <!-- Button for course registration -->
             <button id="register-btn" class="register-btn">Register</button>
         </div>
     </div>
 
+    <!-- Footer section with copyright information -->
     <footer>
         <p>&copy; 2025 Created by Sam.</p>
     </footer>
     
+    <!-- JavaScript for handling user registration and display logic -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Update user display
+            // Update user display based on login status
             updateUserDisplay();
 
+            // Course ID for the current course
             const courseId = 'course5'; 
+            // Retrieve registered courses from local storage
             const registeredCourses = JSON.parse(localStorage.getItem('registeredCourses')) || {};
+            // Check if the user is already registered for this course
             const isRegistered = registeredCourses[courseId] === true;
+            // Get the register button element
             const registerBtn = document.getElementById('register-btn');
 
+            // Function to update the state of the register button based on user status
             function updateButtonState() {
                 const user = JSON.parse(sessionStorage.getItem('currentUser')) || JSON.parse(localStorage.getItem('currentUser'));
                 if (!user) {
@@ -64,14 +87,17 @@
                 }
             }
 
+            // Update button state on page load
             updateButtonState();
 
+            // Event listener for register button click
             registerBtn.addEventListener('click', () => {
                 const user = JSON.parse(sessionStorage.getItem('currentUser')) || JSON.parse(localStorage.getItem('currentUser'));
                 if (!user) {
                     // Redirect to login page if user is not logged in
                     window.location.href = 'login.html';
                 } else if (isRegistered) {
+                    // Confirm unregister action
                     const confirmUnregister = confirm('Are you sure you want to unregister from this course?');
                     if (confirmUnregister) {
                         updateRegistrationStatus(courseId, false);
@@ -79,6 +105,7 @@
                         location.reload();
                     }
                 } else {
+                    // Register the user for the course
                     updateRegistrationStatus(courseId, true);
                     alert('Registration successful!');
                     location.reload();
