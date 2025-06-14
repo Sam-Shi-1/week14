@@ -7,16 +7,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navigation bar at the top of the page -->
     <nav class="navbar">
         <div class="navbar-title">
             <a href="index.html">
+                <!-- Logo image link -->
                 <img src="2.png" alt="Sam's IT Institute Logo" class="navbar-logo">
             </a>
         </div>
+        <!-- Links to different sections of the website -->
         <a href="index.html">Home</a>
         <a href="courses.html">Courses</a>
         <a href="cart.html">Cart</a>
         <a href="orders.html">Orders</a>
+        <!-- User information and login/register/logout links -->
         <div class="user-info">
             <span id="username-display">Guest</span>
             <a href="login.html" id="login-link" style="display: inline;">Login</a>
@@ -25,24 +29,34 @@
         </div>
     </nav>
 
+    <!-- Container for the registration form -->
     <div class="auth-container">
         <div class="auth-forms">
+            <!-- Registration form -->
             <div class="register-form">
                 <h2>Register</h2>
+                <!-- Input field for username -->
                 <input type="text" id="register-username" placeholder="Username" required>
+                <!-- Input field for email -->
                 <input type="email" id="register-email" placeholder="Email" required> 
+                <!-- Input field for password -->
                 <input type="password" id="register-password" placeholder="Password" required>
+                <!-- Input field for confirming password -->
                 <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+                <!-- Button to submit the registration form -->
                 <button onclick="register()">Register</button>
+                <!-- Display error messages if any -->
                 <p id="register-error" class="error-message"></p>
             </div>
         </div>
     </div>
 
+    <!-- Footer section -->
     <footer>
         <p>&copy; 2025  by Sam.</p>
     </footer>
 
+    <!-- JavaScript file for additional functionality -->
     <script src="app.js"></script>
 </body>
 </html>
